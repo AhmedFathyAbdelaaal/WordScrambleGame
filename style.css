@@ -1,0 +1,173 @@
+/*Font That will be Used*/
+@import url('https://fonts.googleapis.com/css?family=Trirong:wght@400;500;600&display=swap'); 
+
+/*Properties to be upplied to whole Page*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trirong',sans-serif;
+}
+
+/*Body Properties*/ 
+body {
+    display: flex; 
+    padding: 0 10px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgb(66, 58, 58);
+}
+
+/*Container Properties*/
+.container{
+    width: 440px;
+    border-radius: 7px;
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+}
+
+/*The h2 withing Container Properties*/
+.container h2{
+    font-size: 25px;
+    font-weight: 500;
+    padding: 16px 25px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+/*Content in Container's margins*/
+.container .content{
+    margin: 25px 20px 35px;
+}
+
+/*The place for our Word's Properties*/
+.content .word{
+    user-select: none;
+    font-size: 33px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 24px;
+    margin-right: -24px;
+    word-break: break-all;
+    text-transform: uppercase;
+}
+
+/*details Margin properties in Content*/
+.content .details{
+    margin: 25px 0 20px;
+}
+
+/*Details paragraph properties*/
+.details p{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/*The "seconds" properties*/
+.details p b{
+    font-weight: 500;
+}
+
+/*Input Field Properties*/
+.content input{
+    width: 100%;
+    height: 60px;
+    outline: none;
+    padding: 0 16px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #55428b;
+}
+
+/*Input field gets a shadow when in focus*/
+.content input:focus{
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/*Placeholder inside the input field's color*/
+.content input::placeholder{
+    color: #aaa;
+}
+
+/*Placeholder inside the input field's color when in focus*/
+.content input:focus::placeholder{
+    color: #55428b;
+}
+
+/*Buttons Properties*/
+.content .buttons{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+/*Further Button Properties*/
+.buttons button{
+    border: none;
+    outline: none;
+    color: rgb(220, 18, 18);
+    cursor: pointer;
+    padding: 15px 0;
+    font-size: 17px;
+    border-radius: 5px;
+    width: calc(100% / 2 - 8px);
+    transition: all 0.3s ease;
+}
+
+/*makes the buttons a bit smaller when activated*/
+.buttons button:active{
+    transform: scale(0.97);
+}
+
+/*background color & text color of the refresh-word button*/
+.buttons .refresh-word{
+    background: rgb(93, 188, 205);
+    color: white;
+}
+
+/*background color of the refresh-word button when hovered on.*/
+.buttons .refresh-word:hover{
+    background: rgb(93, 188, 130);
+    
+}
+
+/*background color & text color of the check-word button*/
+.buttons .check-word{
+    background: rgb(205, 196, 101);
+    color: white;
+}
+
+/*background color of the check-word button when hovered on.*/
+.buttons .check-word:hover{
+    background: rgb(125, 167, 48);
+}
+
+/*@media code section for responsiveness*/
+@media screen and (max-width: 470px) {
+    .container h2{
+        font-size: 22px;
+        padding: 13px 20px;
+    }
+    .content .word{
+        margin-right: -20px;
+        letter-spacing: 20px;
+        font-size: 30px;
+    }
+    .container .content {
+        margin: 20px 20px 30px;
+    }
+    .details p{
+        margin-bottom: 8px;
+        font-size: 16px;
+    }
+    .content input{
+        height: 55px;
+        font-size: 17px;
+    }
+    .buttons button{
+        padding: 14px 0;
+        font-size: 16px;
+        width: calc(100% / 2 -7px);
+    }
+}
