@@ -190,3 +190,91 @@ const inputField = document.querySelector("input"); //the input field in the htm
 const refreshBtn = document.querySelector(".refresh-word"); //the refresh button in the html file.
 const checkBtn = document.querySelector(".check-word"); //the check button in the html file.
 ```
+
+after declaring the previous variables that are constant we declare ones that arent  
+
+```js
+let correctWord, timer; //Declaring variables.
+```
+
+### Now onto the first function  
+
+## initTimer:  
+
+initTimer is written like so:  
+```js 
+//Function responsible for reducing & controling the timer.
+const initTimer = maxTime => {
+```
+we declare it and it recieves maxTime, in our case we will pass it 30s usually.  
+```js
+    clearInterval(timer);
+    timer = setInterval(() => {
+        if(maxTime > 0) {
+            maxTime--; //reduce time by 1 second
+            return timeText.innerText = maxTime; //update timer with the appropriate time.
+        }
+        alert(`Time off! ${correctWord.toUpperCase()} was the correct word`); //if answer not entered in time, show failure message.
+        initGame(); //reset the game
+    }, 1000);
+```
+-In the code above, clearInterval(timer) is there to clear the previous interval of timer  
+  -"timer = setInterval() => {" is like a function, every second(because of the 1000 at the end of it, the 1000 is 1000ms which is a second) it will do
+	-If the maxTime is still bigger than 0, (time didnt run out).  
+		-maxTime-- reducing the time by 1 second  
+		- and after that it changes the text displaying the time with the current updated time.  
+	-If maxTime becomes 0, then it will show the failure msg to the user & reset the game through the initGame function.	
+```js
+}
+```
+the curly brackets continuing the englufing of the initTimer function  .
+
+### Onto Second Function
+
+## initGame():
+```js
+const initGame = () => {
+    initTimer(30);
+    let randomObj = words[Math.floor(Math.random() * words.length)]; //get a random word from the words list.
+    let wordArray = randomObj.word.split(""); //split the word
+    //for loop to randomise the word
+    for (let i = wordArray.length - 1; i > 0; i--) { 
+        let j = Math.floor(Math.random() * (i + 1));
+        [wordArray[i], wordArray[j]] = [wordArray[j], wordArray[i]];
+    }
+    wordText.innerText = wordArray.join(""); //join the array
+    hintText.innerText = randomObj.hint;  //display the appropriate hint.
+    correctWord = randomObj.word.toLowerCase(); //Set correctWord to the word but in lower case to better comapre it later.
+    inputField.value = ""; //clear input field
+    inputField.setAttribute("maxlength", correctWord.length); //Set appropriate maxlength for input field
+}
+```
+### Thats the full code above. onto the explaination:
+
+we start by starting the timer with the time of 30.  
+
+```js
+initTimer(30)
+```
+
+then we get a random word from the words file. this is done in the randomObj element, which will become a random word the user has to guess.
+This is done with Math functions, Math.floor of Math.random multiplied with words.length, basically getting a random number in the range of the size of "words" and said number is floored to become an integer then that int number becomes the index for words[].
+
+word Array is an array with the word splitting of randomObj, this is here to help us randomize the letter later.
+
+```js
+let randomObj = words[Math.floor(Math.random() * words.length)]; //get a random word from the words list.
+let wordArray = randomObj.word.split(""); //split the word
+ ```
+ In the For Loop below, a loop through the length of wordArray is done, and while doing so a random number j using Math.random() multiplied with i+1 and is produced., then we are shuffling the wordArray using the i and j values as index. this is all done to randomize the letters as well as we can.
+ ```js
+ for (let i = wordArray.length - 1; i > 0; i--) { 
+        let j = Math.floor(Math.random() * (i + 1));
+        [wordArray[i], wordArray[j]] = [wordArray[j], wordArray[i]];
+    }
+ ```
+ Now for below, the array is joined back and placed in the wordText variable which is for the place on our game that holds the randomized word the user has to guess. Also the hintText is updated to fit the word the user has to guess.
+ The variable correct word is filled with the correct value. It was changed to lowercase for a fair asseessment of the guessed word by the user, and to avoid issues when comparing
+ ```j
+ 
+ ```
