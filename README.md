@@ -62,6 +62,6 @@ This is what is in the index.html file. our html code. This mainly builds up the
 	-Second one with class "check-word", will check the word the user has inputed  
 	
 There are 3 things linked inside the html file. we have:  
-		1. A link for the CSS File style.css  
-		2. A script link for words.js file  
-		3. A script link for the script.js file   
+		&nbsp;	1. A link for the CSS File style.css  
+		&nbsp;	2. A script link for words.js file  
+		&nbsp;	3. A script link for the script.js file   
