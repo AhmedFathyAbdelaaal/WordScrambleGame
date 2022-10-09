@@ -63,4 +63,4 @@ This is what is in the index.html file. our html code. This mainly builds up the
 There are 3 things linked inside the html file. we have:
 				1. A link for the CSS File style.css
 				2. A script link for words.js file
-				3. A script link for the script.js file
+				3. A script link for the script.js file 
