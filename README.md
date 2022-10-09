@@ -309,9 +309,11 @@ const checkWord = () => {
 In the code above, if the user presses the "check" button, the checkWord is called.  
 userWord is the value inside the input field when the "check" button is clicked.  
 IF:  
+	
 	-userWord is empty, it returns an appropriate message for the user to put something to get checked.  
 	-userWord is not the right word. It returns an appropriate message for the user that their answer was not correct.  
 	-Other than than, if it is correct, it will congratulate the user.   
+	
 Then it calls initGame() to reset the game.
 
 ##This is the end.
