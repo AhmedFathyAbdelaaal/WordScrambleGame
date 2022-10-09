@@ -1,5 +1,6 @@
 # WordScrambleGame
-A simple Word Scrambling Game where the user has to guess what the scrambled letters make in terms of words
+  
+##A simple Word Scrambling Game where the user has to guess what the scrambled letters make in terms of words
 
 In this Git Repository you will find 4 files.
 
@@ -52,7 +53,8 @@ Further Comments are put inside the code to explain what each part does.
 </body>
 </html>
 ```
-This is what is in the index.html file. our html code. This mainly builds up the basis & components of our game. We have the title of the Game in an h2. Then a div with the class content is made to house our content for the game. In content we have:  
+This is what is in the index.html file. our html code. This mainly builds up the basis & components of our game. We have the title of the Game in an h2. Then a div with the class content is made to house our content for the game. In content we have:
+
 	-A p tag with class "word". this will house the word the user has to guess.  
 	-Div tag with class "details". This will house the hint and time left for the user to see.  
 		-The div tag has 2 p tags, one with the class "hint" & the other with "time". Both display the hint for the user & time left respectively.   
@@ -61,7 +63,10 @@ This is what is in the index.html file. our html code. This mainly builds up the
 	-First one with class "refresh-word", will refresh the word the user has to guess  
 	-Second one with class "check-word", will check the word the user has inputed  
 	
-There are 3 things linked inside the html file. we have:  
+There are 3 things linked inside the html file. we have: 
+
 		&nbsp;	1. A link for the CSS File style.css  
 		&nbsp;	2. A script link for words.js file  
 		&nbsp;	3. A script link for the script.js file   
+
+##We will start with style.css:
