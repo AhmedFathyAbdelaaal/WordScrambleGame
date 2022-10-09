@@ -266,15 +266,54 @@ word Array is an array with the word splitting of randomObj, this is here to hel
 let randomObj = words[Math.floor(Math.random() * words.length)]; //get a random word from the words list.
 let wordArray = randomObj.word.split(""); //split the word
  ```
- In the For Loop below, a loop through the length of wordArray is done, and while doing so a random number j using Math.random() multiplied with i+1 and is produced., then we are shuffling the wordArray using the i and j values as index. this is all done to randomize the letters as well as we can.
+In the For Loop below, a loop through the length of wordArray is done.  
+While doing so a random number j using Math.random() multiplied with i+1 and is produced.  
+Then the wordArray is shuffled using the i and j values as index. this is all done to randomize the letters as well as we can.  
  ```js
  for (let i = wordArray.length - 1; i > 0; i--) { 
         let j = Math.floor(Math.random() * (i + 1));
         [wordArray[i], wordArray[j]] = [wordArray[j], wordArray[i]];
     }
  ```
- Now for below, the array is joined back and placed in the wordText variable which is for the place on our game that holds the randomized word the user has to guess. Also the hintText is updated to fit the word the user has to guess.
- The variable correct word is filled with the correct value. It was changed to lowercase for a fair asseessment of the guessed word by the user, and to avoid issues when comparing
+Now for below, the array is joined back and placed in the wordText variable which is for the place on our game that holds the randomized word the user has to guess.  
+Also the hintText is updated to fit the word the user has to guess.    
+The variable correct word is filled with the correct value.   
+It was changed to lowercase for a fair asseessment of the guessed word by the user, and to avoid issues when comparing.  
+The input field is cleared for ease of use for the user.  
+The max length of the input field is set according to the word they have to guess.  
  ```j
- 
+ wordText.innerText = wordArray.join(""); //join the array
+    hintText.innerText = randomObj.hint;  //display the appropriate hint.
+    correctWord = randomObj.word.toLowerCase(); //Set correctWord to the word but in lower case to better comapre it later.
+    inputField.value = ""; //clear input field
+    inputField.setAttribute("maxlength", correctWord.length); //Set appropriate maxlength for input field
  ```
+ Then we call the initGame function to start the program from the get go.  
+ ```js
+ initGame(); //calling the function to display the first word to be guessed.
+ ```
+ ### Onto the Third & Last function
+ 
+ ## checkWord():
+ 
+ ```js
+ //function that checks if the inputted word is correct.
+const checkWord = () => {
+    let userWord = inputField.value.toLowerCase(); //userWord will be the User input.
+    if(!userWord) return alert("Please enter the word to check!"); //If nothing is in the input field then show appropriate failure message.
+    if(userWord !== correctWord) return alert(`Oops! ${userWord} is not a correct word`); //If the input field has the wrong aswer then show appropriate failure message.
+    alert(`Congrats! ${correctWord.toUpperCase()} is the correct word`); //If the input field has the correct answer then show appropriate success message.
+    initGame(); //reinitialize the game
+}
+```
+In the code above, if the user presses the "check" button, the checkWord is called.  
+userWord is the value inside the input field when the "check" button is clicked.  
+IF:  
+	-userWord is empty, it returns an appropriate message for the user to put something to get checked.  
+	-userWord is not the right word. It returns an appropriate message for the user that their answer was not correct.  
+	-Other than than, if it is correct, it will congratulate the user.   
+Then it calls initGame() to reset the game.
+
+##This is the end.
+
+ 
