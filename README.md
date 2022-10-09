@@ -1,6 +1,6 @@
 # WordScrambleGame
   
-##A simple Word Scrambling Game where the user has to guess what the scrambled letters make in terms of words
+## A simple Word Scrambling Game where the user has to guess what the scrambled letters make in terms of words
 
 In this Git Repository you will find 4 files.
 
@@ -69,4 +69,124 @@ There are 3 things linked inside the html file. we have:
 		&nbsp;	2. A script link for words.js file  
 		&nbsp;	3. A script link for the script.js file   
 
-##We will start with style.css:
+## We will start with style.css:
+
+The CSS File contains basically all the code we need to format how the game will look. and for each element we gave it certain properties to make it the way it looks.
+
+## Then onto the words.js file:
+
+```js
+let words = [
+    {
+        word: "addition",
+        hint: "The process of adding numbers"
+    },
+    {
+        word: "meeting",
+        hint: "Event in which people come together"
+    },
+    {
+        word: "number",
+        hint: "Math symbol used for counting"
+    },
+    {
+        word: "exchange",
+        hint: "The act of trading"
+    },
+    {
+        word: "canvas",
+        hint: "Piece of fabric for oil painting"
+    },
+    {
+        word: "garden",
+        hint: "Space for planting flower and plant"
+    },
+    {
+        word: "position",
+        hint: "Location of someone or something"
+    },
+    {
+        word: "feather",
+        hint: "Hair like outer covering of bird"
+    },
+    {
+        word: "comfort",
+        hint: "A pleasant feeling of relaxation"
+    },
+    {
+        word: "tongue",
+        hint: "The muscular organ of mouth"
+    },
+    {
+        word: "expansion",
+        hint: "The process of increase or grow"
+    },
+    {
+        word: "country",
+        hint: "A politically identified region"
+    },
+    {
+        word: "group",
+        hint: "A number of objects or persons"
+    },
+    {
+        word: "taste",
+        hint: "Ability of tongue to detect flavour"
+    },
+    {
+        word: "store",
+        hint: "Large shop where goods are traded"
+    },
+    {
+        word: "field",
+        hint: "Area of land for farming activities"
+    },
+    {
+        word: "friend",
+        hint: "Person other than a family member"
+    },
+    {
+        word: "pocket",
+        hint: "A bag for carrying small items"
+    },
+    {
+        word: "needle",
+        hint: "A thin and sharp metal pin"
+    },
+    {
+        word: "expert",
+        hint: "Person with extensive knowledge"
+    },
+    {
+        word: "statement",
+        hint: "A declaration of something"
+    },
+    {
+        word: "second",
+        hint: "One-sixtieth of a minute"
+    },
+    {
+        word: "library",
+        hint: "Place containing collection of books"
+    },
+]
+
+```
+
+This code basiaclly is the list of words & their hints. said words are the words the player will try & guess.  
+
+
+## Onto the meat & potatoes of this code. script.js:
+
+This file contains all the functionality of the game and hence is very important.  
+
+in the file we:  
+first declare the constant variables we need to make the game run.  
+```js
+const wordText = document.querySelector(".word"); //the word area in the html file.
+const hintText = document.querySelector(".hint span"); //the hint text in the html file.
+const timeText = document.querySelector(".time b"); //the time text in the html file.
+const inputField = document.querySelector("input"); //the input field in the html file.
+const refreshBtn = document.querySelector(".refresh-word"); //the refresh button in the html file.
+const checkBtn = document.querySelector(".check-word"); //the check button in the html file.
+```
